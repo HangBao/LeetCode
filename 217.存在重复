@@ -1,0 +1,12 @@
+# 判断列表转元组之后的长度是否和原长度相等
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        if len(nums) == len(set(nums)) :
+            return False
+        else :
+            return True
+            
