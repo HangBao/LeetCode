@@ -10,3 +10,18 @@ class Solution(object):
         else :
             return True
             
+
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        count = 0
+        nums.sort()
+        for i in range(len(nums)-1):
+            while count < (len(nums)-1) :
+                if nums[i] == nums[i+1]:
+                    return True
+                count += 1
+        return False
