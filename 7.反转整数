@@ -1,0 +1,22 @@
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        result = ''
+        if x >= 0 :
+            for i in str(x):
+                result = i + result
+            result = int(result)
+        if x < 0 :
+            fuhao = ''
+            fuhao = str(x)[0]
+            x = -x
+            for i in str(x):
+                result = i + result
+            result = fuhao + result
+            result = int(result)
+        if int(result) > pow(2,31) or int(result) < pow(-2,31) :
+            return 0
+        return result
