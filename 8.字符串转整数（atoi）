@@ -1,0 +1,33 @@
+class Solution(object):
+    def myAtoi(self, str):
+        """
+        :type str: str
+        :rtype: int
+        """
+        str = str.strip()
+        if len(str) == 0 :
+            return 0
+        elif len(str) == 1 and '9'>=str>='0' :
+            return int(str)
+        
+        flag = ''
+        result = ''
+        if str[0]=='-' or str[0]=='+':
+            flag = str[0]
+            str = str[1:]
+        for i in str :
+            if '9' >= i >= '0' :
+                result += i
+            else:
+                break
+        if result=='':  #1个长度且不为数字的情况
+            return 0
+        else:
+            result=flag+result #将正负号与数字拼接
+            
+        if -2**31<=int(result)<=2**31-1: 
+            return int(result)
+        elif flag=='-' :
+            return (-2)**31
+        else :
+            return 2**31-1
