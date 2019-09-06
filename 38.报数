@@ -1,0 +1,19 @@
+class Solution(object):
+    def countAndSay(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        if n == 1 :
+            return '1'
+        else :
+            s1 = self.countAndSay(n-1)
+            s2 = ''
+            count = 1
+            for i in range(len(s1)) :
+                if len(s1) - i == 1 or s1[i] != s1[i+1] :
+                    s2 += str(count) + s1[i]
+                    count = 1
+                else :
+                    count += 1
+            return s2
