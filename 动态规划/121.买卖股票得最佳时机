@@ -1,1 +1,19 @@
+'''
+# 方法一：暴力解法（超出时间限制）
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        profit = 0
+        for i in range(len(prices)):
+            for j in range(i,len(prices)):
+                money = prices[j] - prices[i]
+                if money > profit :
+                    profit = money
+        return profit
+'''  
+ 
+# 方法二：动态规划
 
